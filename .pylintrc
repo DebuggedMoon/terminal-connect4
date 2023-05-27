@@ -1,0 +1,11 @@
+[MAIN]
+
+persistent=no
+load-plugins= pylint.extensions.typing
+jobs=0
+suggestion-mode=yes
+py-version = 3.7.2
+
+[FORMAT]
+
+indent-string='	'
