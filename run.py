@@ -1,6 +1,6 @@
-from connect4.terminalgame import TerminalGame
-from connect4.board import Board
-from connect4.game import Game
+from terminalgame import TerminalGame
+from board import Board
+from game import Game
 
 def main():
 
