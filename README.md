@@ -1,31 +1,48 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Connect4 Terminal Game
 
-Welcome USER_NAME,
+Terminal Connect4 is a Python implementation of the classic game Connect4, designed to be played in the terminal. This project allows you to enjoy the popular two-player game against a bot opponent, providing a challenging and interactive experience right from your command line.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+![Gif of Game](docs/gifs/game-demo.gif)
+- [Connect4 Terminal Game](#connect4-terminal-game)
+  * [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features Left to Implement](#features-left-to-implement)
+  * [Data Model](#data-model)
+  * [Testing](#testing)
+    * [Unfixed Bugs](#unfixed-bugs)
+    * [Validator Testing](#validator-testing)
+  * [Deployment](#deployment)
+  * [Development](#development)
+    * [Technologies Used](#technologies-used)
+    * [External Python Packages Used](#external-python-packages-used)
+  * [Credits](#credits)
+    * [Content](#content)
+    * [Media](#media)
 
-## Reminders
+## Features
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+### Existing Features
 
-## Creating the Heroku app
+### Features Left to Implement
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Data Model
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Testing
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Unfixed Bugs
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Validator Testing 
 
-Connect your GitHub repository and deploy as normal.
+## Deployment
 
-## Constraints
+## Development
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+### Technologies Used
 
------
-Happy coding!
+### External Python Packages Used
+
+## Credits
+
+### Content
+
+### Media

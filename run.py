@@ -1,3 +1,14 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+from connect4.terminalgame import TerminalGame
+from connect4.board import Board
+from connect4.game import Game
+
+def main():
+
+	board = Board(6, 7)
+	game = Game(board)
+
+	terminal = TerminalGame(game)
+	terminal.render()
+
+if __name__ == "__main__":
+	main()
