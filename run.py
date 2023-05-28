@@ -11,7 +11,7 @@ def main():
 	game = Game(board)
 
 	terminal = TerminalGame(game)
-	terminal.render()
+	terminal.render_game()
 
 if __name__ == "__main__":
 	main()
