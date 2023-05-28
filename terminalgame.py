@@ -12,9 +12,12 @@ class TerminalGame():
 	def __init__(self, game: Game):
 		self.game = game
   
+	def draw_at_xy(self, x: int, y: int, content: str):
+		with self.terminal.location(x, y):
+			print(content)
+    
 	def render_board(self):
 		"""Draws the game board in its current state to the Terminal."""
-    
 		for column in self.game.board.columns:
 			print(self.terminal.center(" ".join(column)))
      
