@@ -7,7 +7,7 @@ class Board():
 	A class to represent a game board.
 	Allows modification to the board state.
 	"""
- 
+
 	width: int
 	heigth: int
 	colums: List[List[str]]
