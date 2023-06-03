@@ -18,14 +18,14 @@ class TerminalGame():
 		with self.terminal.location(x_position, y_position):
 			print(content)
 
-	def render_board(self):
+	def draw_board(self):
 		"""Draws the game board in its current state to the Terminal."""
 		for column in self.game.board.columns:
 			print(self.terminal.center(" ".join(column)))
 
-	def render_game(self) -> None:
+	def draw_game(self) -> None:
 		"""Draws the game in its current state to the Terminal."""
 		if not self.game.board:
 			return
 
-		self.render_board()
+		self.draw_board()
