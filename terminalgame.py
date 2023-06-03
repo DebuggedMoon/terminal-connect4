@@ -17,6 +17,20 @@ class TerminalGame():
 		"""Draws content string at the given x and y position to the Terminal."""
 		with self.terminal.location(x_position, y_position):
 			print(content)
+   
+	def draw_gametitle(self):
+		"""Draws the game title to the Terminal."""
+
+		gametitle_lines = """
+     _/_/_/                                                      _/      _/  _/
+  _/          _/_/    _/_/_/    _/_/_/      _/_/      _/_/_/  _/_/_/_/  _/  _/ 
+ _/        _/    _/  _/    _/  _/    _/  _/_/_/_/  _/          _/      _/_/_/_/
+_/        _/    _/  _/    _/  _/    _/  _/        _/          _/          _/   
+ _/_/_/    _/_/    _/    _/  _/    _/    _/_/_/    _/_/_/      _/_/      _/    
+""".split("\n")
+
+		for line in gametitle_lines:
+			print(self.terminal.center(self.terminal.color_rgb(24, 116, 205) + line + self.terminal.normal))
 
 	def draw_board(self):
 		"""Draws the game board in its current state to the Terminal."""
@@ -28,4 +42,5 @@ class TerminalGame():
 		if not self.game.board:
 			return
 
+		self.draw_gametitle()
 		self.draw_board()
