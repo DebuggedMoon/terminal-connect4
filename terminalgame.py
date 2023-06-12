@@ -41,6 +41,20 @@ class TerminalGame():
           	self.terminal.white_on_red(self.terminal.center(message))
         )
 
+	def wait_for_input(self) -> None:
+		"""Prompts user for input and waits until input is detected."""
+		self.draw_at_xy(
+        	0,
+         	self.terminal.height - 3,
+          	self.terminal.white_on_blue(
+               self.terminal.center("> Press any Key to Continue <")
+            )
+        )
+
+		with self.terminal.cbreak(), self.terminal.hidden_cursor():
+			self.terminal.inkey()
+
+
 	def get_player_move(self) -> int:
 		"""Handles user input and returns a valid player move."""
 		self.draw_at_xy(
@@ -84,4 +98,5 @@ class TerminalGame():
 
 		self.draw_gametitle()
 		self.draw_board()
+		self.wait_for_input()
 		print(f"Player selected {self.get_player_move()}!")
