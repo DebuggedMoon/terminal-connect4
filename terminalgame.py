@@ -3,6 +3,15 @@
 from blessed import Terminal
 from game import Game
 
+GAMETITLE_ART = r"""
+ __ __        ____                                           __      
+/\ \\ \      /\  _`\                                        /\ \__   
+\ \ \\ \     \ \ \/\_\    ___     ___     ___      __    ___\ \ ,_\  
+ \ \ \\ \_    \ \ \/_/_  / __`\ /' _ `\ /' _ `\  /'__`\ /'___\ \ \/  
+  \ \__ ,__\   \ \ \L\ \/\ \L\ \/\ \/\ \/\ \/\ \/\  __//\ \__/\ \ \_ 
+   \/_/\_\_/    \ \____/\ \____/\ \_\ \_\ \_\ \_\ \____\ \____\\ \__\
+      \/_/       \/___/  \/___/  \/_/\/_/\/_/\/_/\/____/\/____/ \/__/
+"""
 
 class TerminalGame():
 	"""A class for handling how the Game object is drawn to the Terminal."""
@@ -21,17 +30,7 @@ class TerminalGame():
 	def draw_gametitle(self):
 		"""Draws the game title to the Terminal."""
 
-		gametitle_lines = r"""
- __ __        ____                                           __      
-/\ \\ \      /\  _`\                                        /\ \__   
-\ \ \\ \     \ \ \/\_\    ___     ___     ___      __    ___\ \ ,_\  
- \ \ \\ \_    \ \ \/_/_  / __`\ /' _ `\ /' _ `\  /'__`\ /'___\ \ \/  
-  \ \__ ,__\   \ \ \L\ \/\ \L\ \/\ \/\ \/\ \/\ \/\  __//\ \__/\ \ \_ 
-   \/_/\_\_/    \ \____/\ \____/\ \_\ \_\ \_\ \_\ \____\ \____\\ \__\
-      \/_/       \/___/  \/___/  \/_/\/_/\/_/\/_/\/____/\/____/ \/__/
-""".split("\n")
-
-		for line in gametitle_lines:
+		for line in GAMETITLE_ART.split("\n"):
 			print(self.terminal.center(self.terminal.color_rgb(24, 116, 205) + line + self.terminal.normal))
 
 	def draw_notification_message(self, message: str) -> None:
