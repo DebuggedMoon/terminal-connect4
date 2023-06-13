@@ -25,15 +25,15 @@ class Board():
 		"""Returns true of the column is full / doesn't have any Empty cells left."""
 		return self.columns[column_position].count("Empty") == 0
 
-	def get_surrounding_cells(self, column_position: int, row_position: int) -> Dict[str, str]:
+	def get_surrounding_cells(self, column_position: int, row_position: int) -> Dict[str, List[int]]:
 		"""Returns a dict containing the cells surrounding the given position"""
 		return {
-			"TopLeft": self.columns[column_position - 1][row_position - 1],
-			"Top": self.columns[column_position][row_position - 1],
-			"TopRight": self.columns[column_position + 1][row_position - 1],
-			"Right": self.columns[column_position + 1][row_position],
-			"BottomRight": self.columns[column_position + 1][row_position + 1],
-			"Bottom": self.columns[column_position][row_position + 1],
-			"BottomLeft": self.columns[column_position - 1][row_position + 1],
-			"Left": self.columns[column_position - 1][row_position]
+			"TopLeft": [column_position - 1, row_position - 1],
+			"Top": [column_position - 1, row_position - 1],
+			"TopRight": [column_position - 1, row_position - 1] ,
+			"Right": [column_position - 1, row_position - 1],
+			"BottomRight": [column_position - 1, row_position - 1],
+			"Bottom": [column_position - 1, row_position - 1],
+			"BottomLeft": [column_position - 1, row_position - 1],
+			"Left": [column_position - 1, row_position - 1]
 		}
