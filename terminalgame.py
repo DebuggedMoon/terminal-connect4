@@ -24,11 +24,24 @@ TUTORIAL_TITLE_ART = r"""
 """
 
 TUTORIAL_TEXT = """
-TODO: How to play
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+To Win in Connect 4, you need to be the first player to
+successfully connect four of your own tokens in a row,
+either horizontally, vertically, or diagonally.
+
+Here's a breakdown of the winning conditions:
+
+███                ███                  
+███            ███                      
+███        ███                          
+███    ███               ███ ███ ███ ███
+
+To place down a token the player has to choose which
+column he wants to put it in. He can do that by pressing
+the columns number on his keyboard. After the player has
+placed his token the bot opponent will do the same.
+
+The bot and player take turns placing until someone wins
+or until there is no more empty cells which will lead to a tie.
 """
 
 WELCOME_TEXT = """
