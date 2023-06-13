@@ -174,6 +174,8 @@ class TerminalGame(Terminal):
 
 		self.draw_gametitle()
 		self.update_board()
+		self.draw_at_xy(0, int(self.height * 0.8), self.center(f"Player {self.red}███{self.normal}"))
+		self.draw_at_xy(0, int(self.height * 0.8) + 2, self.center(f"Computer {self.yellow}███{self.normal}"))
 		print(f"Player selected {self.get_player_move()}!")
 
 	def draw_start_screen(self) -> None:
