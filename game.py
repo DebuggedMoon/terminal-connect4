@@ -13,10 +13,11 @@ class Game():
 	def __init__(self, board: Board):
 		self.board = board
 
-	def place_token(self, owner: str, column_position: int) -> None:
+	def place_token(self, owner: str, column_position: int) -> bool:
 		"""Places player token at lowest available row in column on the game board."""
 		row_position = self.board.find_empty_column_index(column_position)
 		self.board.columns[column_position][row_position] = owner
+		return self.does_move_win(owner, column_position, row_position)
 
 	def does_move_win(self, owner: str,column_position: int, row_position: int) -> bool:
 		"""Returns true of placing a token at given cell causes the player to win."""
