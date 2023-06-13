@@ -26,7 +26,11 @@ def main():
           		int(terminal.height * 0.5),
 				terminal.white_on_green + terminal.center("!!! You WON !!!")
             )
-			terminal.draw_notification_message("> PRESS `RUN PROGRAM`TO PLAY AGAIN <")
+			terminal.draw_at_xy(
+       			0,
+          		terminal.height - 3,
+				terminal.white_on_red + terminal.center("> PRESS `RUN PROGRAM`TO PLAY AGAIN <")
+            )
 			break
 
 if __name__ == "__main__":
