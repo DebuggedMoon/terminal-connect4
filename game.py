@@ -1,6 +1,7 @@
 """This module contains the Connect4 Game class"""
 
 from board import Board
+from random import randint
 
 class Game():
 	"""
@@ -33,3 +34,10 @@ class Game():
 					return True
 
 		return False
+
+	def get_bot_move(self) -> int:
+		"""Returns a random board column that is not full."""
+		move = None
+		while not move or self.board.is_column_full(move):
+			move = randint(0, self.board.width - 1)
+		return move
