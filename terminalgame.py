@@ -146,10 +146,25 @@ class TerminalGame(Terminal):
 
 		return player_move
 
-	def draw_board(self):
+	def transform_board(self):
+		"""Transforms board data"""
+		transformed_board = [[self.white + "███"]*self.game.board.width]*self.game.board.heigth
+		for column_index, column in enumerate(self.game.board.columns):
+			for row_index, cell in enumerate(column):
+				if cell == "Bot":
+					transformed_board[row_index][column_index] = (self.yellow + "███")
+				elif cell == "Player":
+					transformed_board[row_index][column_index] = (self.red + "███")
+		transformed_board.append(["───" for i in range(self.game.board.width)])
+		transformed_board.append([f" {i + 1} " for i in range(self.game.board.width)])
+		return transformed_board
+
+	def update_board(self):
 		"""Draws the game board in its current state to the Terminal."""
-		for column in self.game.board.columns:
-			print(self.center(" ".join(column)))
+		with self.location(0, len(GAMETITLE_ART.split("\n")) + 3):
+			for row in self.transform_board():
+				print(self.center(" ".join(row)))
+				print("")
 
 	def draw_game(self) -> None:
 		"""Draws the game in its current state to the Terminal."""
@@ -157,7 +172,7 @@ class TerminalGame(Terminal):
 			return
 
 		self.draw_gametitle()
-		self.draw_board()
+		self.update_board()
 		print(f"Player selected {self.get_player_move()}!")
 
 	def draw_start_screen(self) -> None:
