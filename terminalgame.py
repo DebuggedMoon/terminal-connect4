@@ -1,5 +1,6 @@
 """This module contains the terminal renderer class for the Connect4 game class"""
 
+from typing import List
 from blessed import Terminal
 from game import Game
 
@@ -64,12 +65,12 @@ class TerminalGame(Terminal):
 		super().__init__()
 		self.game = game
 
-	def draw_at_xy(self, x_position: int, y_position: int, content: str):
+	def draw_at_xy(self, x_position: int, y_position: int, content: str) -> None:
 		"""Draws content string at the given x and y position to the Terminal."""
 		with self.location(x_position, y_position):
 			print(content)
 
-	def draw_gametitle(self):
+	def draw_gametitle(self) -> None:
 		"""Draws the game title to the Terminal."""
 
 		for line in GAMETITLE_ART.split("\n"):
@@ -146,20 +147,20 @@ class TerminalGame(Terminal):
 
 		return player_move
 
-	def transform_board(self):
+	def transform_board(self) -> List[List[str]]:
 		"""Transforms board data"""
 		transformed_board = [[self.white + "███"]*self.game.board.width]*self.game.board.heigth
 		for column_index, column in enumerate(self.game.board.columns):
 			for row_index, cell in enumerate(column):
 				if cell == "Bot":
-					transformed_board[row_index][column_index] = (self.yellow + "███")
+					transformed_board[row_index][column_index] = self.yellow + "███"
 				elif cell == "Player":
-					transformed_board[row_index][column_index] = (self.red + "███")
+					transformed_board[row_index][column_index] = self.red + "███"
 		transformed_board.append(["───" for i in range(self.game.board.width)])
 		transformed_board.append([f" {i + 1} " for i in range(self.game.board.width)])
 		return transformed_board
 
-	def update_board(self):
+	def update_board(self) -> None:
 		"""Draws the game board in its current state to the Terminal."""
 		with self.location(0, len(GAMETITLE_ART.split("\n")) + 3):
 			for row in self.transform_board():
