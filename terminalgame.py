@@ -142,10 +142,12 @@ class TerminalGame(Terminal):
 				self.draw_notification_message(
                     f"Input must be within board width (1-{board_width})! Got: {player_input}"
                 )
+			elif self.game.board.is_column_full(player_move):
+				self.draw_notification_message(
+                    f"Column is Full! Got: {player_input}"
+                )
 			else:
 				return player_move
-
-		return player_move
 
 	def transform_board(self) -> List[List[str]]:
 		"""Transforms board data"""
@@ -175,8 +177,7 @@ class TerminalGame(Terminal):
 		self.draw_gametitle()
 		self.update_board()
 		self.draw_at_xy(0, int(self.height * 0.8), self.center(f"Player {self.red}███{self.normal}"))
-		self.draw_at_xy(0, int(self.height * 0.8) + 2, self.center(f"Computer {self.yellow}███{self.normal}"))
-		print(f"Player selected {self.get_player_move()}!")
+		self.draw_at_xy(0, int(self.height * 0.8) + 2, self.center(f"Bot {self.yellow}███{self.normal}"))
 
 	def draw_start_screen(self) -> None:
 		"""Draws the welcome screen meant for program start."""

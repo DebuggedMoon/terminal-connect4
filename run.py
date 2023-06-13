@@ -14,6 +14,9 @@ def main():
 	terminal.draw_start_screen()
 	terminal.draw_tutorial_screen()
 	terminal.draw_game_screen()
+	
+	while True:
+     	self.get_player_move()
 
 if __name__ == "__main__":
 	main()
