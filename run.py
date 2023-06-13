@@ -7,7 +7,7 @@ from game import Game
 def main():
 	"""Initiates a Connect4 Game for the Terminal"""
 
-	board = Board(6, 7)
+	board = Board(7, 6)
 	game = Game(board)
 
 	terminal = TerminalGame(game)
