@@ -15,4 +15,8 @@ class Board():
 	def __init__(self, width: int, heigth: int):
 		self.width = width
 		self.heigth = heigth
-		self.columns = [["⬜"]*width]*heigth
+		self.colums = [["Empty"]*width]*heigth
+
+	def find_empty_colum_index(self, colum_position: int) -> int:
+		"""Returns the next empty colum cells index."""
+		return self.colums[colum_position].index("Empty")
