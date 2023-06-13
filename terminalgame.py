@@ -142,12 +142,12 @@ class TerminalGame(Terminal):
 				self.draw_notification_message(
                     f"Input must be within board width (1-{board_width})! Got: {player_input}"
                 )
-			elif self.game.board.is_column_full(player_move):
+			elif self.game.board.is_column_full(player_move  - 1):
 				self.draw_notification_message(
                     f"Column is Full! Got: {player_input}"
                 )
 			else:
-				return player_move
+				return player_move - 1
 
 	def transform_board(self) -> List[List[str]]:
 		"""Transforms board data"""
