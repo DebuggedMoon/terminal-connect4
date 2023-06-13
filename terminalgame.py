@@ -98,5 +98,9 @@ class TerminalGame():
 
 		self.draw_gametitle()
 		self.draw_board()
-		self.wait_for_input()
 		print(f"Player selected {self.get_player_move()}!")
+
+	def draw_start_screen(self) -> None:
+		"""Draws the welcome screen meant for program start."""
+		self.draw_gametitle()
+		self.wait_for_input()
