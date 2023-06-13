@@ -2,7 +2,8 @@
 
 Terminal Connect4 is a Python implementation of the classic game Connect4, designed to be played in the terminal. This project allows you to enjoy the popular two-player game against a bot opponent, providing a challenging and interactive experience right from your command line.
 
-![Gif of Game](docs/gifs/game-demo.gif)
+You can find the live Demo here! - https://terminal-connect4.herokuapp.com/
+
 - [Connect4 Terminal Game](#connect4-terminal-game)
   * [Features](#features)
     * [Existing Features](#existing-features)
