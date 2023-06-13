@@ -23,6 +23,15 @@ Terminal Connect4 is a Python implementation of the classic game Connect4, desig
 
 ### Existing Features
 
+  - Terminal User Interface
+    - A terminal was used as a means to display the state of the game and allow users to interact with it.
+    - To improve user experience the terminal app library [blessed](https://pypi.org/project/blessed/) was used which allowed for better visuals and easier input handling.
+    - To allow for a easier and more modular way of displaying the state of a [Game](https://github.com/DebuggedMoon/terminal-connect4/blob/main/game.py), the [TerminalGame](https://github.com/DebuggedMoon/terminal-connect4/blob/main/terminalgame.py) class was written to handle everything Terminal and [blessed](https://pypi.org/project/blessed/) related.
+    - The Terminal UI controls and switches between a number of screens to achieve more of a video game feeling:
+      - The `Starting Screen` welcomes players and gives a short and hyped summary of the game.
+        ![Starting Screen](docs/images/starting_screen.webp)
+
+
 ### Features Left to Implement
 
 ## Data Model
