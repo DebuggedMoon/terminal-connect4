@@ -118,7 +118,7 @@ class TerminalGame(Terminal):
 				player_input = self.inkey()
 
 			if not player_input.isdigit():
-				self.draw_notification_message(f"Input must be a number! Got: {player_input}")
+				self.draw_notification_message(f"Input must be a number! Got: {repr(player_input)}")
 				continue
 
 			board_width = self.game.board.width
