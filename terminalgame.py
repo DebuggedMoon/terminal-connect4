@@ -167,7 +167,7 @@ class TerminalGame(Terminal):
 				print(self.center(" ".join(row)))
 				print("")
 
-	def draw_game(self) -> None:
+	def draw_game_screen(self) -> None:
 		"""Draws the game in its current state to the Terminal."""
 		if not self.game.board:
 			return

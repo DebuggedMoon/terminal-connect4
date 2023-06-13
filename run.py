@@ -13,7 +13,7 @@ def main():
 	terminal = TerminalGame(game)
 	terminal.draw_start_screen()
 	terminal.draw_tutorial_screen()
-	terminal.draw_game()
+	terminal.draw_game_screen()
 
 if __name__ == "__main__":
 	main()
