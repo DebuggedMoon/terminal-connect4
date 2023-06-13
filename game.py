@@ -1,7 +1,7 @@
 """This module contains the Connect4 Game class"""
 
-from board import Board
 from random import randint
+from board import Board
 
 class Game():
 	"""
