@@ -69,9 +69,9 @@ The frontend terminal should now be connected and deployed to Heroku.
 
 ## Development
 
-### Technologies Used
-
 ### External Python Packages Used
+
+ - [blessed](https://pypi.org/project/blessed/) was used to allow for easier creation of the application and input handling.
 
 ## Credits
 
