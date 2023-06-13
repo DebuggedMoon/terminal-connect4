@@ -151,7 +151,9 @@ class TerminalGame(Terminal):
 
 	def transform_board(self) -> List[List[str]]:
 		"""Transforms board data"""
-		transformed_board = [[self.white + "███"  + self.normal]*self.game.board.width]*self.game.board.heigth
+		transformed_board = [
+      		[f"{self.white}███{self.normal}"]*self.game.board.width
+        ]*self.game.board.heigth
 		for column_index, column in enumerate(self.game.board.columns):
 			for row_index, cell in enumerate(column):
 				if cell == "Bot":
