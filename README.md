@@ -30,11 +30,8 @@ Terminal Connect4 is a Python implementation of the classic game Connect4, desig
     - The Terminal UI controls and switches between a number of screens to achieve more of a video game feeling:
       - The `Starting Screen` welcomes players and gives a short and hyped summary of the game.
         ![Starting Screen](docs/images/starting_screen.webp)
-
-
-### Features Left to Implement
-
-## Data Model
+      - The `Tutorial Screen` gives the player information about the game and teaches them on how to play it.
+        ![Tutorial Screen](docs/images/tutorial.webp)
 
 ## Testing
 
