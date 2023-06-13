@@ -13,62 +13,62 @@ GAMETITLE_ART = r"""
       \/_/       \/___/  \/___/  \/_/\/_/\/_/\/_/\/____/\/____/ \/__/
 """
 
-class TerminalGame():
+class TerminalGame(Terminal):
 	"""A class for handling how the Game object is drawn to the Terminal."""
 
 	game: Game
-	terminal = Terminal()
 
 	def __init__(self, game: Game):
+		super().__init__()
 		self.game = game
 
 	def draw_at_xy(self, x_position: int, y_position: int, content: str):
 		"""Draws content string at the given x and y position to the Terminal."""
-		with self.terminal.location(x_position, y_position):
+		with self.location(x_position, y_position):
 			print(content)
 
 	def draw_gametitle(self):
 		"""Draws the game title to the Terminal."""
 
 		for line in GAMETITLE_ART.split("\n"):
-			print(self.terminal.center(self.terminal.color_rgb(24, 116, 205) + line + self.terminal.normal))
+			print(self.center(self.color_rgb(24, 116, 205) + line + self.normal))
 
 	def draw_notification_message(self, message: str) -> None:
 		"""Draws a given text notification at the bottom of the Terminal."""
 		self.draw_at_xy(
         	0,
-         	self.terminal.height - 2,
-          	self.terminal.white_on_red(self.terminal.center(message))
+         	self.height - 2,
+          	self.white_on_red(self.center(message))
         )
 
 	def wait_for_input(self) -> None:
 		"""Prompts user for input and waits until input is detected."""
 		self.draw_at_xy(
         	0,
-         	self.terminal.height - 3,
-          	self.terminal.white_on_blue(
-               self.terminal.center("> Press any Key to Continue <")
+         	self.height - 3,
+          	self.white_on_blue(
+               self.center("> Press any Key to Continue <")
             )
         )
 
-		with self.terminal.cbreak(), self.terminal.hidden_cursor():
-			self.terminal.inkey()
+		with self.cbreak(), self.hidden_cursor():
+			self.inkey()
 
 
 	def get_player_move(self) -> int:
 		"""Handles user input and returns a valid player move."""
 		self.draw_at_xy(
         	0,
-         	self.terminal.height - 3,
-          	self.terminal.white_on_blue(
-               self.terminal.center("> Press Column Number you wish to Select <")
+         	self.height - 3,
+          	self.white_on_blue(
+               self.center("> Press Column Number you wish to Select <")
             )
         )
 
 		while True:
 
-			with self.terminal.cbreak(), self.terminal.hidden_cursor():
-				player_input = self.terminal.inkey()
+			with self.cbreak(), self.hidden_cursor():
+				player_input = self.inkey()
 
 			if not player_input.isdigit():
 				self.draw_notification_message(f"Input must be a number! Got: {player_input}")
@@ -89,7 +89,7 @@ class TerminalGame():
 	def draw_board(self):
 		"""Draws the game board in its current state to the Terminal."""
 		for column in self.game.board.columns:
-			print(self.terminal.center(" ".join(column)))
+			print(self.center(" ".join(column)))
 
 	def draw_game(self) -> None:
 		"""Draws the game in its current state to the Terminal."""
@@ -104,3 +104,4 @@ class TerminalGame():
 		"""Draws the welcome screen meant for program start."""
 		self.draw_gametitle()
 		self.wait_for_input()
+		print(self.clear)
