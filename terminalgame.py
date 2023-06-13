@@ -13,6 +13,24 @@ GAMETITLE_ART = r"""
     \/___/  \/___/  \/_/\/_/\/_/\/_/\/____/\/____/ \/__/       \/_/  
 """
 
+TUTORIAL_TITLE_ART = r"""
+ ______         __                                ___      
+/\__  _\       /\ \__                __          /\_ \     
+\/_/\ \/ __  __\ \ ,_\   ___   _ __ /\_\     __  \//\ \    
+   \ \ \/\ \/\ \\ \ \/  / __`\/\`'__\/\ \  /'__`\  \ \ \   
+    \ \ \ \ \_\ \\ \ \_/\ \L\ \ \ \/ \ \ \/\ \L\.\_ \_\ \_ 
+     \ \_\ \____/ \ \__\ \____/\ \_\  \ \_\ \__/.\_\/\____\
+      \/_/\/___/   \/__/\/___/  \/_/   \/_/\/__/\/_/\/____/
+"""
+
+TUTORIAL_TEXT = """
+TODO: How to play
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+"""
+
 WELCOME_TEXT = """
 Welcome to Connect 4,
 the ultimate game of strategy and skill!
@@ -43,6 +61,18 @@ class TerminalGame(Terminal):
 
 		for line in GAMETITLE_ART.split("\n"):
 			print(self.center(self.color_rgb(24, 116, 205) + line + self.normal))
+
+	def draw_tutorial_title(self) -> None:
+		"""Draws the tutorial screen title to the Terminal."""
+
+		for line in TUTORIAL_TITLE_ART.split("\n"):
+			print(self.center(self.color_rgb(24, 116, 205) + line + self.normal))
+
+	def draw_tutorial_text(self) -> None:
+		"""Draws the tutorial text to the Terminal."""
+
+		for line in TUTORIAL_TEXT.split("\n"):
+			print(self.center(self.white + line + self.normal))
 
 	def draw_welcome_text(self) -> None:
 		"""Draws the welcome text to the Terminal."""
@@ -122,5 +152,12 @@ class TerminalGame(Terminal):
 		print("")
 		self.draw_gametitle()
 		self.draw_welcome_text()
+		self.wait_for_input()
+		print(self.clear)
+
+	def draw_tutorial_screen(self) -> None:
+		"""Draws the tutorial screen which contains game controns and rules."""
+		self.draw_tutorial_title()
+		self.draw_tutorial_text()
 		self.wait_for_input()
 		print(self.clear)
