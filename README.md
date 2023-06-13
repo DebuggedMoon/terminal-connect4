@@ -7,18 +7,13 @@ You can find the live Demo here! - https://terminal-connect4.herokuapp.com/
 - [Connect4 Terminal Game](#connect4-terminal-game)
   * [Features](#features)
     * [Existing Features](#existing-features)
-    * [Features Left to Implement](#features-left-to-implement)
-  * [Data Model](#data-model)
   * [Testing](#testing)
-    * [Unfixed Bugs](#unfixed-bugs)
     * [Validator Testing](#validator-testing)
   * [Deployment](#deployment)
   * [Development](#development)
-    * [Technologies Used](#technologies-used)
     * [External Python Packages Used](#external-python-packages-used)
   * [Credits](#credits)
     * [Content](#content)
-    * [Media](#media)
 
 ## Features
 
