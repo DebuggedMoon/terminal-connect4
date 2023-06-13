@@ -14,13 +14,14 @@ GAMETITLE_ART = r"""
 """
 
 WELCOME_TEXT = """
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Welcome to Connect 4,
+the ultimate game of strategy and skill!
+
+Brace yourself for intense battles against a bot opponent
+as you strategically place your tokens to create an
+unbreakable line of four.
+
+Victory awaits those who can outwit and outmaneuver their adversaries!
 """
 
 class TerminalGame(Terminal):
@@ -42,7 +43,7 @@ class TerminalGame(Terminal):
 
 		for line in GAMETITLE_ART.split("\n"):
 			print(self.center(self.color_rgb(24, 116, 205) + line + self.normal))
-   
+
 	def draw_welcome_text(self) -> None:
 		"""Draws the welcome text to the Terminal."""
 
