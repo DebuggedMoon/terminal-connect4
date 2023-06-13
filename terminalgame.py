@@ -102,6 +102,7 @@ class TerminalGame(Terminal):
 
 	def draw_start_screen(self) -> None:
 		"""Draws the welcome screen meant for program start."""
+		print("")
 		self.draw_gametitle()
 		self.wait_for_input()
 		print(self.clear)
