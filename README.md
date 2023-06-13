@@ -41,7 +41,7 @@ You can find the live Demo here! - https://terminal-connect4.herokuapp.com/
 ### Unfixed Bugs
 
 ### Validator Testing 
-
+ - Pylint was used with for validating the python files. All python files were checked and no warnings were found!
 ## Deployment
 
 ## Development
