@@ -20,3 +20,7 @@ class Board():
 	def find_empty_column_index(self, column_position: int) -> int:
 		"""Returns the next empty column cells index."""
 		return self.columns[column_position].index("Empty")
+
+	def is_column_full(self, column_position: int) -> bool:
+		"""Returns true of the column is full / doesn't have any Empty cells left."""
+		return self.columns[column_position].count("Empty") == 0
