@@ -29,11 +29,11 @@ class Board():
 		"""Returns a dict containing the cells surrounding the given position"""
 		return {
 			"TopLeft": [column_position - 1, row_position - 1],
-			"Top": [column_position - 1, row_position - 1],
-			"TopRight": [column_position - 1, row_position - 1] ,
-			"Right": [column_position - 1, row_position - 1],
-			"BottomRight": [column_position - 1, row_position - 1],
-			"Bottom": [column_position - 1, row_position - 1],
-			"BottomLeft": [column_position - 1, row_position - 1],
-			"Left": [column_position - 1, row_position - 1]
+			"Top": [column_position, row_position - 1],
+			"TopRight": [column_position + 1, row_position - 1] ,
+			"Right": [column_position + 1, row_position],
+			"BottomRight": [column_position + 1, row_position + 1],
+			"Bottom": [column_position, row_position + 1],
+			"BottomLeft": [column_position - 1, row_position + 1],
+			"Left": [column_position - 1, row_position]
 		}
