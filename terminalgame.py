@@ -13,6 +13,16 @@ GAMETITLE_ART = r"""
     \/___/  \/___/  \/_/\/_/\/_/\/_/\/____/\/____/ \/__/       \/_/  
 """
 
+WELCOME_TEXT = """
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+"""
+
 class TerminalGame(Terminal):
 	"""A class for handling how the Game object is drawn to the Terminal."""
 
@@ -32,6 +42,12 @@ class TerminalGame(Terminal):
 
 		for line in GAMETITLE_ART.split("\n"):
 			print(self.center(self.color_rgb(24, 116, 205) + line + self.normal))
+   
+	def draw_welcome_text(self) -> None:
+		"""Draws the welcome text to the Terminal."""
+
+		for line in WELCOME_TEXT.split("\n"):
+			print(self.center(self.white + line + self.normal))
 
 	def draw_notification_message(self, message: str) -> None:
 		"""Draws a given text notification at the bottom of the Terminal."""
@@ -104,5 +120,6 @@ class TerminalGame(Terminal):
 		"""Draws the welcome screen meant for program start."""
 		print("")
 		self.draw_gametitle()
+		self.draw_welcome_text()
 		self.wait_for_input()
 		print(self.clear)
