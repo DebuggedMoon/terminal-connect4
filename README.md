@@ -38,8 +38,6 @@ You can find the live Demo here! - https://terminal-connect4.herokuapp.com/
 
 ## Testing
 
-### Unfixed Bugs
-
 ### Validator Testing 
  - Pylint was used with for validating the python files. All python files were checked and no warnings were found!
 ## Deployment
@@ -77,4 +75,4 @@ The frontend terminal should now be connected and deployed to Heroku.
 
 ### Content
 
-### Media
+ - The idea to use blessed was inspiried by [Eoin](https://github.com/eoinlarkin).
