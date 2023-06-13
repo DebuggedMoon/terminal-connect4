@@ -1,5 +1,6 @@
 """Main Programm for Initiating and Managing the Connect4 Game"""
 
+from time import sleep
 from terminalgame import TerminalGame
 from board import Board
 from game import Game
@@ -26,12 +27,29 @@ def main():
           		int(terminal.height * 0.5),
 				terminal.white_on_green + terminal.center("!!! You WON !!!")
             )
+			break
+
+		bot_move = game.get_bot_move()
+		bot_won = game.place_token("Bot", bot_move)
+
+		terminal.update_board()
+		if bot_won:
 			terminal.draw_at_xy(
        			0,
-          		terminal.height - 3,
-				terminal.white_on_red + terminal.center("> PRESS `RUN PROGRAM`TO PLAY AGAIN <")
+          		int(terminal.height * 0.5),
+				terminal.white_on_red + terminal.center("!!! You LOSE !!!")
             )
 			break
+
+	terminal.draw_at_xy(
+    	0,
+    	terminal.height - 3,
+		terminal.white_on_red + terminal.center("> PRESS `RUN PROGRAM`TO PLAY AGAIN <")
+    )
+
+	while True:
+		sleep(1)
+
 
 if __name__ == "__main__":
 	main()
