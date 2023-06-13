@@ -26,12 +26,15 @@ class Game():
 		for direction in surrounding_cells:
 			matched_tokens = 1
 			coordinates = surrounding_cells[direction]
-			while owner == self.board.columns[coordinates[0]][coordinates[1]]:
-				matched_tokens += 1
-				coordinates = self.board.get_surrounding_cells(coordinates[0], coordinates[1])[direction]
+			try:
+				while owner == self.board.columns[coordinates[0]][coordinates[1]]:
+					matched_tokens += 1
+					coordinates = self.board.get_surrounding_cells(coordinates[0], coordinates[1])[direction]
 
-				if matched_tokens == 4:
-					return True
+					if matched_tokens == 4:
+						return True
+			except IndexError:
+				pass # Cell is outside the game board.
 
 		return False
 
