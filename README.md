@@ -9,7 +9,7 @@ You can find the live Demo here! - https://terminal-connect4.herokuapp.com/
     * [Existing Features](#existing-features)
   * [Testing](#testing)
     * [Validator Testing](#validator-testing)
-  * [Deployment](#deployment)
+  * [Installation & Usage](#installation--usage)
   * [Development](#development)
     * [External Python Packages Used](#external-python-packages-used)
   * [Credits](#credits)
